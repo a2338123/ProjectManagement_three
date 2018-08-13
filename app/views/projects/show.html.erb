@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Projectid:</strong>
+  <%= @project.projectid %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @project.name %>
+</p>
+
+<p>
+  <strong>Service:</strong>
+  <%= @project.service %>
+</p>
+
+<p>
+  <strong>Start time:</strong>
+  <%= @project.start_time %>
+</p>
+
+<p>
+  <strong>Plan complated at:</strong>
+  <%= @project.plan_complated_at %>
+</p>
+
+<p>
+  <strong>Actual complated at:</strong>
+  <%= @project.actual_complated_at %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @project.status %>
+</p>
+
+<p>
+  <strong>Url:</strong>
+  <%= @project.url %>
+</p>
+
+<%= link_to 'Edit', edit_project_path(@project) %> |
+<%= link_to 'Back', projects_path %>

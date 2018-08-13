@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Customerserviceid:</strong>
+  <%= @customerserver.customerserviceid %>
+</p>
+
+<p>
+  <strong>Customerservice:</strong>
+  <%= @customerserver.customerservice %>
+</p>
+
+<p>
+  <strong>Customer:</strong>
+  <%= @customerserver.customer %>
+</p>
+
+<p>
+  <strong>Deadline:</strong>
+  <%= @customerserver.deadline %>
+</p>
+
+<p>
+  <strong>Our server:</strong>
+  <%= @customerserver.our_server %>
+</p>
+
+<%= link_to 'Edit', edit_customerserver_path(@customerserver) %> |
+<%= link_to 'Back', customerservers_path %>

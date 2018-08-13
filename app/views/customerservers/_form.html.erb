@@ -1,0 +1,42 @@
+<%= form_for(customerserver) do |f| %>
+  <% if customerserver.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(customerserver.errors.count, "error") %> prohibited this customerserver from being saved:</h2>
+
+      <ul>
+      <% customerserver.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :customerserviceid %>
+    <%= f.text_field :customerserviceid %>
+  </div>
+
+  <div class="field">
+    <%= f.label :customerservice %>
+    <%= f.text_field :customerservice %>
+  </div>
+
+  <div class="field">
+    <%= f.label :customer %>
+    <%= f.text_field :customer %>
+  </div>
+
+  <div class="field">
+    <%= f.label :deadline %>
+    <%= f.text_field :deadline %>
+  </div>
+
+  <div class="field">
+    <%= f.label :our_server %>
+    <%= f.text_field :our_server %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

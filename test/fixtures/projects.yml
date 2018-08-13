@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  projectid: MyString
+  name: MyString
+  service: MyString
+  start_time: MyString
+  plan_complated_at: MyString
+  actual_complated_at: MyString
+  status: MyString
+  url: MyString
+
+two:
+  projectid: MyString
+  name: MyString
+  service: MyString
+  start_time: MyString
+  plan_complated_at: MyString
+  actual_complated_at: MyString
+  status: MyString
+  url: MyString

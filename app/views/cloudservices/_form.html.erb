@@ -1,0 +1,77 @@
+<!--
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8"> 
+  <title>水平表单</title>
+  <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">  
+  <script src="https://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
+  <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+-->
+
+
+<%= form_for(cloudservice) do |f| %>
+  <% if cloudservice.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(cloudservice.errors.count, "error") %> prohibited this cloudservice from being saved:</h2>
+
+      <ul>
+      <% cloudservice.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+
+<!--form class="form-horizontal" role="form">
+  <div class="form-group">
+	<label for="cloudserviceid" class="col-sm-2 control-label">cloudserviceid</label>
+	<div class="col-sm-10">
+	  <input type="text" class="form-control" id="cloudserviceid" 
+			 placeholder="请输入服务器id">
+	</div>
+  </div>
+  <div class="form-group">
+	<label for="vendor" class="col-sm-2 control-label">vendor</label>
+	<div class="col-sm-10">
+    <input type="text" class="form-control" id="vendor" 
+           placeholder="请输入供应商">
+    </div>
+  </div>
+  <div class="form-group">
+	<label for="expired_at" class="col-sm-2 control-label">expired_at</label>
+	<div class="col-sm-10">
+   	  <input type="text" class="form-control" id="expired_at" 
+             placeholder="请输入到期时间">
+	</div>
+  </div>
+</form>
+ <!%= form_for(cloudservice) do |f| %>
+  <div class="actions">
+    <!%= f.submit %>
+  </div>
+<!% end %>
+-->
+  <div class="field">
+    <%= f.label :cloudserviceid %>
+    <%= f.text_field :cloudserviceid %>
+  </div>
+  
+  <div class="field">
+    <%= f.label :vendor %>
+    <%= f.text_field :vendor %>
+  </div>
+
+  <div class="field">
+    <%= f.label :expired_at %>
+    <%= f.text_field :expired_at %>
+  </div>
+  
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

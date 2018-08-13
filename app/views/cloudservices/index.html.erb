@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8"> 
+  <title>条纹表格</title>
+  <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">  
+  <script src="https://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
+  <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<script>
+  $(function(){
+    $("input[type=button]").click(function(){
+       var txt=$("input[type=text]").val();
+         if($.trim(txt)!=""){
+           $("table tr:not('#theader')").hide().filter(":contains('"+txt+"')").show().css("background","white");
+         }else{          
+		   $("table tr:not('#theader')").css("background","#fff").show();
+		 }
+   });
+})
+</script>
+
+
+</head>
+<body>
+
+<p id="notice"><%= notice %></p>
+
+<table class="table table-striped">
+  <div class="page-header">
+    <h1><center>Cloudservices</center></h1>
+  </div>
+
+<input type="text"></input>
+<input type="button" value="搜索"></input>
+
+  <thead>
+    <tr id="theader">
+      <th>Cloudserviceid</th>
+      <th>Vendor</th>
+      <th>Expired at</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @cloudservices.each do |cloudservice| %>
+      <tr>
+        <td><%= cloudservice.cloudserviceid %></td>
+        <td><%= cloudservice.vendor %></td>
+        <td><%= cloudservice.expired_at %></td>
+        <td><%= link_to 'Show', cloudservice %></td>
+        <td><%= link_to 'Edit', edit_cloudservice_path(cloudservice) %></td>
+        <td><%= link_to 'Destroy', cloudservice, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Cloudservice', new_cloudservice_path %>
+
+</br>
+
+<%= link_to 'Return to the home page', home_path      %>
+
+</body>
+</html>

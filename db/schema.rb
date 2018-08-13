@@ -10,7 +10,57 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180808030022) do
+ActiveRecord::Schema.define(version: 20180810030513) do
+
+  create_table "cloudservices", force: :cascade do |t|
+    t.string   "cloudserviceid"
+    t.string   "vendor"
+    t.string   "expired_at"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+  end
+
+  create_table "customers", force: :cascade do |t|
+    t.string   "customerid"
+    t.string   "name"
+    t.string   "contact"
+    t.string   "contactmethod"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+  end
+
+  create_table "customerservers", force: :cascade do |t|
+    t.string   "customerserviceid"
+    t.string   "customerservice"
+    t.string   "customer"
+    t.string   "deadline"
+    t.string   "our_server"
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
+  end
+
+  create_table "customerservices", force: :cascade do |t|
+    t.string   "customerservice_id"
+    t.string   "customer_service"
+    t.string   "our_service"
+    t.string   "deadline"
+    t.string   "customer"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+  end
+
+  create_table "projects", force: :cascade do |t|
+    t.string   "projectid"
+    t.string   "name"
+    t.string   "service"
+    t.string   "start_time"
+    t.string   "plan_complated_at"
+    t.string   "actual_complated_at"
+    t.string   "status"
+    t.string   "url"
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "name"

@@ -1,14 +1,22 @@
 Rails.application.routes.draw do
 
+  resources :projects
+
+  resources :customerservers
+
+  resources :cloudservices
+
+  resources :customers
+
   get '/home',     to: 'static_pages#home'
 
-  get '/customer',  to: 'static_pages#customer'
+  get '/customers',   to: 'customers#new'
 
-  get '/cloudservice', to: 'static_pages#cloudservice'
+  get '/cloudservices', to: 'cloudservices#new'
  
-  get '/customerservice',to: 'static_pages#customerservice'
+  get '/customerservices',to: 'customerservices#new'
 
-  get '/project',  to: 'static_pages#project'
+  get '/project',  to: 'projects#new'
 
   root 'sessions#new'
 
@@ -19,5 +27,7 @@ Rails.application.routes.draw do
   get 'users/new'
   
   resources :users
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+
 end

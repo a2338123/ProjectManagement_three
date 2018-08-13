@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  cloudserviceid: MyString
+  vendor: MyString
+  expired_at: MyString
+
+two:
+  cloudserviceid: MyString
+  vendor: MyString
+  expired_at: MyString

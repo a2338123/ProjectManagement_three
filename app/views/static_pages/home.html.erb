@@ -1,2 +1,56 @@
-<h1>StaticPages#home</h1>
-<p>Find me in app/views/static_pages/home.html.erb</p>
+<div class="center jubmotron">
+  <h1><center>Welcome to the Project Management</center></h1>
+
+  <h2>
+    <center>This is the internal project management system.</center>
+  </h2>
+<style>
+ul
+{
+  list-style-type:none;
+  margin:0px;
+  padding:0px;
+  width: 100%;
+  background-color: #CCC;
+  border: 1px solid #555;
+}
+
+li a {
+  display: block;
+  color: #000;
+  padding: 8px 16px;
+  text-decoration: none;
+}
+ 
+li {
+  text-align: center;
+  border-bottom: 1px solid #555;
+
+li:last-child {
+  border-bottom: none;
+}
+/* 鼠标移动到选项上修改背景颜色 */
+
+
+
+
+
+li a.active {
+  background-color: #4CAF50;
+  color: white;
+}
+
+li a:hover:not(.active) {
+  background-color: #555;
+  color: white;
+}
+
+</style>
+    <ul><font size="3">
+	  <li><%= link_to "Customers",         customers_path    %></li>
+      <li><%= link_to "Cloudservices",     cloudservices_path %></li>
+      <li><%= link_to "Customerservers",   customerservers_path %></li>
+	  <li><%= link_to "Projects",           projects_path %></li>
+	</ul></font>
+</div>
+

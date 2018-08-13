@@ -1,0 +1,2 @@
+module CloudservicesHelper
+end
