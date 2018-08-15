@@ -16,4 +16,6 @@
 </p>
 
 <%= link_to 'Edit', edit_cloudservice_path(@cloudservice) %> |
-<%= link_to 'Back', cloudservices_path %>
+<%= link_to 'Back', cloudservices_path %> |
+<%= link_to 'Destroy', @customer, method: :delete, data: { confirm: 'Are you sure?' } %>
+

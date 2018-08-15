@@ -1,3 +1,4 @@
+<% if logged_in? %>
 <div class="center jubmotron">
   <h1><center>Welcome to the Project Management</center></h1>
 
@@ -51,6 +52,12 @@ li a:hover:not(.active) {
       <li><%= link_to "Cloudservices",     cloudservices_path %></li>
       <li><%= link_to "Customerservers",   customerservers_path %></li>
 	  <li><%= link_to "Projects",           projects_path %></li>
+	  <li><%= link_to "Log out",      logout_path, method: "delete" %></li>
 	</ul></font>
-</div>
 
+
+<% else %>
+  <li><%= link_to "Log in", login_path %></li>
+<% end %>
+
+</div>

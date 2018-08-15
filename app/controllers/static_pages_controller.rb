@@ -1,16 +1,26 @@
 class StaticPagesController < ApplicationController
+  before_action :logged_in_user
   def home
   end
 
-  def customer
+  def customers
   end
 
-  def cloudservice
+  def cloudservices
   end
 
-  def customerservice
+  def customerservices
   end
 
-  def project
+  def projects
+  end
+
+  private
+
+  def logged_in_user
+    unless logged_in?
+	flash[:danger] = "Please log in."
+    redirect_to login_url
+    end
   end
 end

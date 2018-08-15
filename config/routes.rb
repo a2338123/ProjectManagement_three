@@ -8,6 +8,8 @@ Rails.application.routes.draw do
 
   resources :customers
 
+  resources :users
+
   get '/home',     to: 'static_pages#home'
 
   get '/customers',   to: 'customers#new'
@@ -24,9 +26,10 @@ Rails.application.routes.draw do
   
   get '/login',   to: 'sessions#new'
 
+  delete '/logout',   to: 'sessions#destroy'
+
   get 'users/new'
   
-  resources :users
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 

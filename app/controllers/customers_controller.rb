@@ -1,4 +1,5 @@
 class CustomersController < ApplicationController
+  before_action :logged_in_user
   before_action :set_customer, only: [:show, :edit, :update, :destroy]
 
   # GET /customers
@@ -71,4 +72,10 @@ class CustomersController < ApplicationController
     def customer_params
       params.require(:customer).permit(:customerid, :name, :contact, :contactmethod)
     end
+
+    def logged_in_user
+	  unless logged_in?
+	  redirect_to login_url
+	  end
+	end
 end

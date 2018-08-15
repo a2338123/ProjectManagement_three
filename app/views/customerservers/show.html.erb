@@ -26,4 +26,6 @@
 </p>
 
 <%= link_to 'Edit', edit_customerserver_path(@customerserver) %> |
-<%= link_to 'Back', customerservers_path %>
+<%= link_to 'Back', customerservers_path %> |
+<%= link_to 'Destroy', @customerserver, method: :delete, data: { confirm: 'Are you sure?' } %>
+

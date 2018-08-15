@@ -1,4 +1,5 @@
 class ProjectsController < ApplicationController
+  before_action :logged_in_user
   before_action :set_project, only: [:show, :edit, :update, :destroy]
 
   # GET /projects
@@ -71,4 +72,11 @@ class ProjectsController < ApplicationController
     def project_params
       params.require(:project).permit(:projectid, :name, :service, :start_time, :plan_complated_at, :actual_complated_at, :status, :url)
     end
+
+    def logged_in_user
+	  unless logged_in?
+	    flash[:danger] = "Please log in."
+	    redirect_to login_url
+	  end
+	end
 end
