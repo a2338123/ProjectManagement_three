@@ -1,3 +1,3 @@
 class Customer < ApplicationRecord
-  validates :customerid, uniqueness: { case_sensitive: false }
+  validates :code, uniqueness: { case_sensitive: false }
 end

@@ -4,9 +4,9 @@ class CreateProjects < ActiveRecord::Migration[5.0]
       t.string :projectid
       t.string :name
       t.string :service
-      t.string :start_time
-      t.string :plan_complated_at
-      t.string :actual_complated_at
+      t.date :start_time
+      t.date :plan_complated_at
+      t.date :actual_complated_at
       t.string :status
       t.string :url
 

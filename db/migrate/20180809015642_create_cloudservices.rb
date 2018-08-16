@@ -3,7 +3,7 @@ class CreateCloudservices < ActiveRecord::Migration[5.0]
     create_table :cloudservices do |t|
       t.string :cloudserviceid
       t.string :vendor
-      t.string :expired_at
+      t.date :expired_at
 
       t.timestamps
     end

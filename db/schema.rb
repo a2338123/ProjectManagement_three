@@ -10,52 +10,42 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180810030513) do
+ActiveRecord::Schema.define(version: 20180815091538) do
 
   create_table "cloudservices", force: :cascade do |t|
     t.string   "cloudserviceid"
     t.string   "vendor"
-    t.string   "expired_at"
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
+    t.date     "expired_at"
   end
 
   create_table "customers", force: :cascade do |t|
-    t.string   "customerid"
+    t.string   "code"
     t.string   "name"
-    t.string   "contact"
-    t.string   "contactmethod"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
+    t.string   "contact_person_name"
+    t.string   "contact_person_mobile"
+    t.datetime "created_at",            null: false
+    t.datetime "updated_at",            null: false
   end
 
   create_table "customerservers", force: :cascade do |t|
-    t.string   "customerserviceid"
+    t.string   "code"
     t.string   "customerservice"
     t.string   "customer"
-    t.string   "deadline"
     t.string   "our_server"
-    t.datetime "created_at",        null: false
-    t.datetime "updated_at",        null: false
-  end
-
-  create_table "customerservices", force: :cascade do |t|
-    t.string   "customerservice_id"
-    t.string   "customer_service"
-    t.string   "our_service"
-    t.string   "deadline"
-    t.string   "customer"
-    t.datetime "created_at",         null: false
-    t.datetime "updated_at",         null: false
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+    t.date     "deadline"
   end
 
   create_table "projects", force: :cascade do |t|
     t.string   "projectid"
     t.string   "name"
     t.string   "service"
-    t.string   "start_time"
-    t.string   "plan_complated_at"
-    t.string   "actual_complated_at"
+    t.date     "start_time"
+    t.date     "plan_complated_at"
+    t.date     "actual_complated_at"
     t.string   "status"
     t.string   "url"
     t.datetime "created_at",          null: false

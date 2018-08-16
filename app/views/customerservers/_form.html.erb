@@ -12,8 +12,8 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :customerserviceid %>
-    <%= f.text_field :customerserviceid %>
+    <%= f.label :code %>
+    <%= f.text_field :code %>
   </div>
 
   <div class="field">
@@ -28,7 +28,7 @@
 
   <div class="field">
     <%= f.label :deadline %>
-    <%= f.text_field :deadline %>
+    <%= date_select :customerserver, :deadline %>
   </div>
 
   <div class="field">

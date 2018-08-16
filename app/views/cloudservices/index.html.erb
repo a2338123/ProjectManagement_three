@@ -3,11 +3,14 @@
 <head>
   <meta charset="utf-8"> 
   <title>条纹表格</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdn.bootcss.com/foundation/5.5.3/css/foundation.min.css">
   <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">  
   <script src="https://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
   <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
-<script>
+  <script src="https://cdn.bootcss.com/foundation/5.5.3/js/foundation.min.js"></script>
+  <script src="https://cdn.bootcss.com/foundation/5.5.3/js/vendor/modernizr.js"></script>
+ <script>
   $(function(){
     $("input[type=button]").click(function(){
        var txt=$("input[type=text]").val();
@@ -20,6 +23,26 @@
 })
 </script>
 
+<style>
+
+ul.side-nav {
+  position: fixed;
+  left: 25px;
+  top: 60px;
+  background-color: #eefaff;
+}
+ ul.side-nav {
+   border-style:outset;
+   border:1px solid #bbe1f1;
+}
+ ul.side-nav {
+   padding-top:25px;
+   padding-bottom:25px;
+   padding-right:0px;
+   padding-left:0px;
+}
+
+</style>
 
 </head>
 <body>
@@ -30,6 +53,15 @@
   <div class="page-header">
     <h1><center>Cloudservices</center></h1>
   </div>
+
+ <ul class="side-nav">
+   <li style="font-size: 1.5em;"><%= link_to "Customers",         customers_path    %></li>
+   <li style="font-size: 1.5em;"><%= link_to "Cloudservices",     cloudservices_path %></li>
+   <li  style="font-size: 1.5em;"><%= link_to "Customerservers",   customerservers_path %></li>
+   <li  style="font-size: 1.5em;"><%= link_to "Projects",           projects_path %></li>
+ </ul>
+</div>
+
 
 <input type="text"></input>
 <input type="button" value="搜索"></input>

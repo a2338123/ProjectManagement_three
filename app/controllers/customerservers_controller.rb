@@ -70,7 +70,7 @@ class CustomerserversController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def customerserver_params
-      params.require(:customerserver).permit(:customerserviceid, :customerservice, :customer, :deadline, :our_server)
+      params.require(:customerserver).permit(:code, :customerservice, :customer, :deadline, :our_server)
     end
 
     def logged_in_user
