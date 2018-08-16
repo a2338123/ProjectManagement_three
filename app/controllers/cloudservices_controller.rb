@@ -6,6 +6,9 @@ class CloudservicesController < ApplicationController
   # GET /cloudservices.json
   def index
     @cloudservices = Cloudservice.all
+	@search = OpenStruct.new params[:search]
+	@cloudservices = build_search(@cloudservices, @search)
+    @cloudservices = @cloudservices.order(expired_at: @search.expired_at) if @search.expired_at.present?
   end
 
   # GET /cloudservices/1
@@ -67,7 +70,17 @@ class CloudservicesController < ApplicationController
     def set_cloudservice
       @cloudservice = Cloudservice.find(params[:id])
     end
-
+   
+    def build_search(records, search)
+	  if search.query.present?
+	  cols = [
+	    '`cloudservices`.`code` LIKE :query',
+	    '`cloudservices`.`vendor` LIKE :query',
+	  ]
+	  records = records.where(cols.join(" OR "), {query: "%#{search.query}%"})
+      end
+	  records
+	end
     # Never trust parameters from the scary internet, only allow the white list through.
     def cloudservice_params
       params.require(:cloudservice).permit(:code, :vendor, :expired_at)

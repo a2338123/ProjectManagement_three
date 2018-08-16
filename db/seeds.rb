@@ -5,3 +5,13 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+User.create(name: 'admin', password: 'admin', password_confirmation: 'admin')
+
+5.times do |i|
+  Cloudservice.create(
+    code: "code-#{i}",
+    vendor: "vendor-#{i}",
+    expired_at: Time.now + i.days
+  )
+end

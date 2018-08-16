@@ -1,19 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="utf-8"> 
-  <script language="JavaScript" type="text/javascript" src="111.231.83.240:3    000/jquery.tablesorter.js"></script>
-  <script language="JavaScript" type="text/javascript" src="111.231.83.240:3    000/jquery-latest.js"></script>
-
+  <meta charset="utf-8">   
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://cdn.bootcss.com/foundation/5.5.3/css/foundation.min.css">
   <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">  
-  <script src="https://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
-  <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <script src="https://cdn.bootcss.com/foundation/5.5.3/js/foundation.min.js"></script>
-  <script src="https://cdn.bootcss.com/foundation/5.5.3/js/vendor/modernizr.js"></script>
-	  <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script> 
-  <!--script type="text/javascript" src="111.231.83.240:3000/jquery.tablesorter.min.js></script-->
+
 
 <script>
   $(function(){
@@ -48,26 +40,33 @@ ul.side-nav {
 }
 
 </style>
-<script>
-$(document).ready(function() 
-  { 
-  $("#myTable").tablesorter(); 
-  } 
-);
-</script>
 
 </head>
 
 <body>
-
-
-<p id="notice"><%= notice %></p>
-
 <div class="page-header">
       <h1><center>Cloudservices</center></h1>
 </div>
 
-<ul class="side-nav">
+
+<div class="panel-body">
+  <%= form_for :search, method: :get do |f| %>
+    <div class="form-inline">
+    <div class="form-group">
+    <%= f.label :query, '搜索条件' %>
+    <%= f.text_field :query, value: @search.query %>
+  </div>
+  <div class="form-group">
+     <input name="search[expired_at]" type="radio" value="desc" />
+     <label>desc</label>
+     <input name="search[expired_at]" type="radio" value="asc" />
+     <label>asc</label>
+  </div>																	    <div class="form-group"> 											          <button type="submit" class="btn btn-primary"><%= t("button.search") %></button>
+    </div> 
+   </div> 																	   <% end %>			
+</div>
+
+  <ul class="side-nav">
  <li style="font-size: 1.5em;"><%= link_to "Customers",         customers_path    %></li>
  <li style="font-size: 1.5em;"><%= link_to "Cloudservices",     cloudservices_path %></li>
  <li style="font-size: 1.5em;"><%= link_to "Customerservers",   customerservers_path %></li>
