@@ -67,7 +67,7 @@ ul.side-nav {
 
   <thead>
     <tr id="theader">
-      <th>Projectid</th>
+      <th>Code</th>
       <th>Name</th>
       <th>Service</th>
       <th>Start time</th>
@@ -82,7 +82,7 @@ ul.side-nav {
   <tbody>
     <% @projects.each do |project| %>
       <tr>
-        <td><%= project.projectid %></td>
+        <td><%= project.code %></td>
         <td><%= project.name %></td>
         <td><%= project.service %></td>
         <td><%= project.start_time %></td>

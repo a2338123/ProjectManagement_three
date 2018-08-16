@@ -13,10 +13,10 @@
 ActiveRecord::Schema.define(version: 20180815091538) do
 
   create_table "cloudservices", force: :cascade do |t|
-    t.string   "cloudserviceid"
+    t.string   "code"
     t.string   "vendor"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.date     "expired_at"
   end
 
@@ -40,7 +40,7 @@ ActiveRecord::Schema.define(version: 20180815091538) do
   end
 
   create_table "projects", force: :cascade do |t|
-    t.string   "projectid"
+    t.string   "code"
     t.string   "name"
     t.string   "service"
     t.date     "start_time"

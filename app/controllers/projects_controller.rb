@@ -29,7 +29,7 @@ class ProjectsController < ApplicationController
 
     respond_to do |format|
       if @project.save
-        format.html { redirect_to @project, notice: 'Project was successfully created.' }
+        format.html { redirect_to projects_path, notice: 'Project was successfully created.' }
         format.json { render :show, status: :created, location: @project }
       else
         format.html { render :new }
@@ -70,7 +70,7 @@ class ProjectsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def project_params
-      params.require(:project).permit(:projectid, :name, :service, :start_time, :plan_complated_at, :actual_complated_at, :status, :url)
+      params.require(:project).permit(:code, :name, :service, :start_time, :plan_complated_at, :actual_complated_at, :status, :url)
     end
 
     def logged_in_user

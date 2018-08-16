@@ -68,7 +68,7 @@ ul.side-nav {
 
   <thead>
     <tr id="theader">
-      <th>Cloudserviceid</th>
+      <th>Code</th>
       <th>Vendor</th>
       <th>Expired at</th>
       <th colspan="3"></th>
@@ -78,7 +78,7 @@ ul.side-nav {
   <tbody>
     <% @cloudservices.each do |cloudservice| %>
       <tr>
-        <td><%= cloudservice.cloudserviceid %></td>
+        <td><%= cloudservice.code %></td>
         <td><%= cloudservice.vendor %></td>
         <td><%= cloudservice.expired_at %></td>
         <td><%= link_to 'Show', cloudservice %></td>

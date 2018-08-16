@@ -29,7 +29,7 @@ class CloudservicesController < ApplicationController
 
     respond_to do |format|
       if @cloudservice.save
-        format.html { redirect_to @cloudservice, notice: 'Cloudservice was successfully created.' }
+        format.html { redirect_to cloudservices_path, notice: 'Cloudservice was successfully created.' }
         format.json { render :show, status: :created, location: @cloudservice }
       else
         format.html { render :new }
@@ -70,7 +70,7 @@ class CloudservicesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def cloudservice_params
-      params.require(:cloudservice).permit(:cloudserviceid, :vendor, :expired_at)
+      params.require(:cloudservice).permit(:code, :vendor, :expired_at)
     end
  
 	def logged_in_user

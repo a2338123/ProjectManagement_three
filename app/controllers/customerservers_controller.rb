@@ -29,7 +29,7 @@ class CustomerserversController < ApplicationController
 
     respond_to do |format|
       if @customerserver.save
-        format.html { redirect_to @customerserver, notice: 'Customerserver was successfully created.' }
+        format.html { redirect_to customerservers_path, notice: 'Customerserver was successfully created.' }
         format.json { render :show, status: :created, location: @customerserver }
       else
         format.html { render :new }
