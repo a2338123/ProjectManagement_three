@@ -2,7 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8"> 
-  <title>条纹表格</title>
+  <script language="JavaScript" type="text/javascript" src="111.231.83.240:3    000/jquery.tablesorter.js"></script>
+  <script language="JavaScript" type="text/javascript" src="111.231.83.240:3    000/jquery-latest.js"></script>
+
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://cdn.bootcss.com/foundation/5.5.3/css/foundation.min.css">
   <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">  
@@ -10,7 +12,10 @@
   <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <script src="https://cdn.bootcss.com/foundation/5.5.3/js/foundation.min.js"></script>
   <script src="https://cdn.bootcss.com/foundation/5.5.3/js/vendor/modernizr.js"></script>
- <script>
+	  <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script> 
+  <!--script type="text/javascript" src="111.231.83.240:3000/jquery.tablesorter.min.js></script-->
+
+<script>
   $(function(){
     $("input[type=button]").click(function(){
        var txt=$("input[type=text]").val();
@@ -43,35 +48,44 @@ ul.side-nav {
 }
 
 </style>
+<script>
+$(document).ready(function() 
+  { 
+  $("#myTable").tablesorter(); 
+  } 
+);
+</script>
 
 </head>
+
 <body>
+
 
 <p id="notice"><%= notice %></p>
 
-<table class="table table-striped">
-  <div class="page-header">
-    <h1><center>Cloudservices</center></h1>
-  </div>
-
- <ul class="side-nav">
-   <li style="font-size: 1.5em;"><%= link_to "Customers",         customers_path    %></li>
-   <li style="font-size: 1.5em;"><%= link_to "Cloudservices",     cloudservices_path %></li>
-   <li  style="font-size: 1.5em;"><%= link_to "Customerservers",   customerservers_path %></li>
-   <li  style="font-size: 1.5em;"><%= link_to "Projects",           projects_path %></li>
- </ul>
+<div class="page-header">
+      <h1><center>Cloudservices</center></h1>
 </div>
 
+<ul class="side-nav">
+ <li style="font-size: 1.5em;"><%= link_to "Customers",         customers_path    %></li>
+ <li style="font-size: 1.5em;"><%= link_to "Cloudservices",     cloudservices_path %></li>
+ <li style="font-size: 1.5em;"><%= link_to "Customerservers",   customerservers_path %></li>
+ <li style="font-size: 1.5em;"><%= link_to "Projects",           projects_path %></li>
+</ul>
 
 <input type="text"></input>
 <input type="button" value="搜索"></input>
+
+
+<table id="myTable" class="table table-striped table-bordered table-hover tablesorter">
 
   <thead>
     <tr id="theader">
       <th>Code</th>
       <th>Vendor</th>
       <th>Expired at</th>
-      <th colspan="3"></th>
+      <th colspan="3"</th>
     </tr>
   </thead>
 
