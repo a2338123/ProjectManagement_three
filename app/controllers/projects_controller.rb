@@ -6,6 +6,11 @@ class ProjectsController < ApplicationController
   # GET /projects.json
   def index
     @projects = Project.all
+	@search = OpenStruct.new params[:search]
+	@projects = build_search(@projects, @search)
+	@projects = @projects.order(start_time: @search.start_time ) if @search.start_time.present?
+	@projects = @projects.order(plan_complated_at: @search.plan_complated_at ) if @search.plan_complated_at.present?
+	@projects = @projects.order(actual_complated_at: @search.actual_complated_at ) if @search.actual_complated_at.present?
   end
 
   # GET /projects/1
@@ -67,6 +72,20 @@ class ProjectsController < ApplicationController
     def set_project
       @project = Project.find(params[:id])
     end
+
+     def build_search(records, search)
+       if search.query.present?
+	     cols = [
+	     '`projects`.`code` LIKE :query',
+	     '`projects`.`name` LIKE :query',
+		 '`projects`.`service` LIKE :query',
+		 '`projects`.`status` LIKE :query',
+		 '`projects`.`url` LIKE :query'
+	     ]
+	     records = records.where(cols.join(" OR "), {query: "%#{search.query}%"})
+	   end
+	   records
+	 end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def project_params

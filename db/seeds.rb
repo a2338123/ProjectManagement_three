@@ -15,3 +15,13 @@ User.create(name: 'admin', password: 'admin', password_confirmation: 'admin')
     expired_at: Time.now + i.days
   )
 end
+5.times do |i|
+  Customerserver.create(
+	code: "code-#{i}",
+	customerservice: "customerservice-#{i}",
+	customer: "customer-#{i}",
+	deadline: Time.now + i.days,
+	our_server: "our_server-#{i}"	
+	)
+end
+   

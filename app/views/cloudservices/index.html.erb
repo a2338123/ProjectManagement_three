@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">  
 
 
-<script>
+<!--script>
   $(function(){
     $("input[type=button]").click(function(){
        var txt=$("input[type=text]").val();
@@ -18,7 +18,7 @@
 		 }
    });
 })
-</script>
+</script-->
 
 <style>
 
@@ -58,9 +58,9 @@ ul.side-nav {
   </div>
   <div class="form-group">
      <input name="search[expired_at]" type="radio" value="desc" />
-     <label>desc</label>
+     <label>expired_at desc</label>
      <input name="search[expired_at]" type="radio" value="asc" />
-     <label>asc</label>
+     <label>expired_at asc</label>
   </div>																	    <div class="form-group"> 											          <button type="submit" class="btn btn-primary"><%= t("button.search") %></button>
     </div> 
    </div> 																	   <% end %>			
@@ -73,8 +73,8 @@ ul.side-nav {
  <li style="font-size: 1.5em;"><%= link_to "Projects",           projects_path %></li>
 </ul>
 
-<input type="text"></input>
-<input type="button" value="搜索"></input>
+<!--input type="text"></input>
+<input type="button" value="搜索"></input-->
 
 
 <table id="myTable" class="table table-striped table-bordered table-hover tablesorter">
